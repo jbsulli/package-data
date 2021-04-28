@@ -1,0 +1,35 @@
+{
+  "bin": {
+    "packagedata": "index.js"
+  },
+  "dependencies": {
+    "source-map-support": "^0.5.19"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.1",
+    "@babel/core": "^7.12.3",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/plugin-proposal-object-rest-spread": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-typescript": "^7.12.1",
+    "@jbsulli/eslint-config": "0.0.6",
+    "@types/express": "^4.17.9",
+    "dotenv": "^8.2.0",
+    "eslint": "^7.13.0",
+    "prettier": "^2.1.2"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@jbsulli"
+    ]
+  },
+  "license": "MIT",
+  "name": "@jbsulli/package-data",
+  "preferGlobal": true,
+  "prettier": "@jbsulli/eslint-config/prettier.yml",
+  "scripts": {
+    "build": "babel ./src --out-dir .dist --extensions \".ts\" --source-maps",
+    "build:watch": "yarn rimraf .dist && yarn build --watch"
+  },
+  "version": "0.0.0"
+}

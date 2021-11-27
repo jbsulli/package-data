@@ -1,15 +1,12 @@
-import { join as pathJoin } from "path";
-
-import parseYarnLockfile from "./parseYarnLockfile";
-import readFile from "./readFile";
+import getPackageData from "./get-package-data";
+import log from "./log";
 
 // const args = process.argv.slice(2);
-const cwd = process.cwd();
 
 const run = async () => {
-  const yarnLockfile = await readFile(pathJoin(cwd, "yarn.lock"), "utf8");
+  const packageData = await getPackageData();
 
-  console.log(parseYarnLockfile(yarnLockfile));
+  log(packageData);
 };
 
 run();
